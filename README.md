@@ -16,3 +16,4 @@ Keyrock is the FIWARE component responsible for Identity Management. Using Keyro
 ### [Capability Manager](https://github.com/IoTCrawler/Capability-Manager)
 ### [Security Facade](https://github.com/IoTCrawler/Security-Facade)
 ## [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
+## [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
