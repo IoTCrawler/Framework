@@ -9,6 +9,7 @@ The Ranking component facilitates ranking mechanism for IoT resources. Ranking a
 ## [Orchestrator](https://github.com/IoTCrawler/Orchestrator)
 
 ## [Keyrock](https://github.com/IoTCrawler/Keyrock)
+Keyrock is the FIWARE component responsible for Identity Management. Using Keyrock (in conjunction with other security components such as PEP Proxy and Authzforce) enables you to add OAuth2-based authentication and authorization security to your services and applications.
 ## [Search Enabler](https://github.com/IoTCrawler/Search-Enabler)
 ## [XACML PAP PDP](https://github.com/IoTCrawler/XACML_PAP_PDP)
 ## [Capability Manager](https://github.com/IoTCrawler/Capability-Manager)
