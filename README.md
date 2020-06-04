@@ -34,4 +34,6 @@ Since the DCapBAC technology decouples the authorisation in two phases: one for 
 This component has been designed as an endpoint for performing both authentication and authorisation operations in an transparent way for the requester. By receiving the corresponding request it interacts with both Identity Manager and Authorisation Enabler, and in case the requester owns the appropriate permissions for the request, it sends the authorsation token (Capability Token) back to the requester.
 
 ## [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
-## [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
+
+### [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
+The Semantic Enrichment (SE) component is responsible for annotating data streams with Quality of Information (QoI). To calculate the QoI the SE subscribes to the MDR for changes in IoTStreams. When receiveing notifications for a stream it takes the related metadata of the stream and generates the QoI annotation, which is stored in the MDR afterwards to be accessible by other components of the framework.
