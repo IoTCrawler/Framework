@@ -10,13 +10,11 @@ The Indexing component  provides a means for clients to search for IoT entities 
 ## [Ranking](https://github.com/IoTCrawler/Ranking)
 The Ranking component facilitates ranking mechanism for IoT resources. Ranking and resource selection rely on the registry built (and constantly updated) by crawling and indexing methods. The purpose of Ranking is to aid users and applications to not only find a set of resources relevant to their needs, but also to select the best or most appropriate one(s) from that set. There are multiple criterias for ranking IoT resources such as data type, proximity, latency, availability. The Ranking component supports application-dependent,multi-criteria ranking.
 ## [Orchestrator](https://github.com/IoTCrawler/Orchestrator)
-
+The orchestrator component is responsible for interactions with client IoT applications. It allows applications to subscribe to streams without having a public endpoint as well as tracks subscription requests. In case of stream failure, orchestrator is able to notify application and provide a list of alternative streams for subscription.
 ## [Identity Manager - Keyrock](https://github.com/IoTCrawler/Keyrock)
 Keyrock is the FIWARE component responsible for Identity Management. Using Keyrock (in conjunction with other security components such as PEP Proxy and Authzforce) enables you to add OAuth2-based authentication and authorization security to your services and applications.
-
 ## [Search Enabler](https://github.com/IoTCrawler/Search-Enabler)
-
-
+The GraphQL-based search enabler component is considered as a main search-component of IoTCrawler. It employs a query language (GraphQL) and a query processor, which works on top of NGSI-LD-compliant component (the ranking Component or MDR). The  component eliminates the lack of expressivity and functional capabilities which prevent NGSI-LD from being the main search interface the large-scale IoT metadata deployments gathered in the IoTCrawler platform. The search enablerb fills the gap between low-level sensors and high-level domain semantics about sensors data and deals with the context-dependent entities by maintaining the context in the IoTCrawler platform. 
 ## Authorization Enabler
 The purpose of this enabler is twofold: on the one hand for a secure communication between the IoTCrawler components, and on the other, for controlling the access of the registered users to the resources stored in the IoTCrawler platform. It instantiates the Distributed Capability-Based Access Control (DCapBAC) technology by using both an XACML framework, and a Capability Manager. This latter is responsible for issuing authorisations tokens which must be present in each of the requests aimed at the MetaData Repository.
 
@@ -35,5 +33,5 @@ This component has been designed as an endpoint for performing both authenticati
 
 ## [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
 
-### [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
+## [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
 The Semantic Enrichment (SE) component is responsible for annotating data streams with Quality of Information (QoI). To calculate the QoI the SE subscribes to the MDR for changes in IoTStreams. When receiveing notifications for a stream it takes the related metadata of the stream and generates the QoI annotation, which is stored in the MDR afterwards to be accessible by other components of the framework.
