@@ -67,4 +67,4 @@ As part of the Semantic Enrichment component, the Pattern Extraction module enab
 * **City of Aarhus (Denmark)** will, as the only city in the project, works as a test bed for the IoTCrawler and the use cases developed. They will help define the requirements for the use cases through co-creation workshops with citizens, city stakeholders and other relevant actors in this field.
 
 # License
-The information here is made available under the Apache License, Version 2.0 (Apache-2.0), located in the [LICENSE](LICENSE) file.
+The information here is made available under the Apache License, Version 2.0 (Apache-2.0), located in the [LICENSE](LICENSE) file. The source code files of different components of IoTCrawler are provided under EUPL-1.2, Apache-2.0 and MIT licenses. You will find more information in respective component repository.
