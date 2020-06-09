@@ -12,6 +12,7 @@
   * [Keyrock](#keyrock)
 * [Semantic Enrichment](#semantic-enrichment)
   * [Pattern Extractor](#pattern-extractor)
+* [Contributors](#contributors)
 * [License](#license)
 
 # IoTCrawler Framework
@@ -53,5 +54,17 @@ The Semantic Enrichment (SE) component is responsible for annotating data stream
 
 ### [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
 As part of the Semantic Enrichment component, the Pattern Extraction module enables the generation of higher-level context by analysing the annotated IoT data streams retrieved from IoT data sources that are pushed to the Metadata Repository. The Pattern Extractor uses the ```iot-stream:StreamObservations``` to detect higher-level events, which are then published to the broker. A machine learning method is used to analyse a group of ```sosa:observesProperties```. This analysis model is registered as a new subscription in the broker. This subscription includes spatial and temporal and the data type specifications for data streams. Once a stream matches the specifications of a registered process, the pattern extractor then caches the observations that are necessary to perform the analysis. When the observations are received for each stream in the group, the pattern extractor constructs a time window to analyse the data. The result of the analysis is a label for a pattern of data. This label, together with the start and end times of the pattern, is then represented as an ```iot-stream:Event``` NGSI-LD entity and published into the broker. The broker then makes these patterns searchable.
-## License
+# Contributors
+* **Universidad de Murcia (Spain)** is contributing with a research group with expertise in security in network infrastructure and the integration of intelligent techniques and agents based middleware platforms.
+* **University of Surrey (United Kingdom)** will contribute to the development of crawling, indexing, search and ranking mechanisms in IoTCrawler.
+* **University of Applied Sciences Osnabrück (Germany)**‘s expertise in quality analysis and testing will contribute to the framework and define the requirements for sensor modelling, monitoring and fault recovery and the design of Data attributes and QoI metrics.
+* **Aarhus University (Denmark)** will be contributing to the business model innovation and general business development of the IoTCrawler showcases and technologies.
+* **Siemens AG Österreich (Austria)** will contribute to the development of semantic discovery mechanisms. Based on these technologies, SIEMENS will realise a use case in the context of smart energy systems.
+* **NEC Corporation (Germany)** will be mainly involved in establishing trust in IoT devices by leveraging trusted execution environments. NEC will also contribute in securing the IoT platform by leveraging its in-depth experience with the blockchain technology and policy compliance checking.
+* **AGT Group (R&D) GmbH (Germany)** will contribute to the definition of requirements, to the architecture, to the development of crawling and discovery algorithms and implementations, and the design, implementation and evaluation of use case scenarios and exploitation in its product portfolio.
+* **Digital worx GmbH (Germany)** focuses on the development of software interfaces, user interaction and software development for mobile applications and applications in the Internet of Things (IoT). They will take the lead on the overall technical coordination.
+* **Odin Solutions S.L (Spain)** will contribute to the security and privacy solution for sensors and smart objects in the project based on their experience on security and privacy framework for constrained devices in scenarios like smart cities and industry 4.0.
+* **City of Aarhus (Denmark)** will, as the only city in the project, works as a test bed for the IoTCrawler and the use cases developed. They will help define the requirements for the use cases through co-creation workshops with citizens, city stakeholders and other relevant actors in this field.
+
+# License
 The information here is made available under the Apache License, Version 2.0 (Apache-2.0), located in the [LICENSE](LICENSE) file.
