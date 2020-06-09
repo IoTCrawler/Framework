@@ -6,7 +6,12 @@
 * [Search Enabler](#search-enabler)
 * [Authorization Enabler](#authorization-enabler)
   * [XACML PAP PDP](#xacml-pap-pdp)
+  * [Capability Manager](#capability-manager)
+  * [PEP-PROXY](#pep-proxy)
+  * [Security Facade](#security-facade)
+  * [Keyrock](#keyrock)
 * [Semantic Enrichment](#semantic-enrichment)
+  * [Pattern Extractor](#pattern-extractor)
 * [License](#license)
 
 # IoTCrawler Framework
@@ -40,7 +45,7 @@ Since the DCapBAC technology decouples the authorisation in two phases: one for 
 
 ### [Security Facade](https://github.com/IoTCrawler/Security-Facade)
 This component has been designed as an endpoint for performing both authentication and authorisation operations in an transparent way for the requester. By receiving the corresponding request it interacts with both Identity Manager and Authorisation Enabler, and in case the requester owns the appropriate permissions for the request, it sends the authorsation token (Capability Token) back to the requester.
-### [Identity Manager - Keyrock](https://github.com/IoTCrawler/Keyrock)
+### [Keyrock](https://github.com/IoTCrawler/Keyrock)
 Keyrock is the FIWARE component responsible for Identity Management. Using Keyrock (in conjunction with other security components such as PEP Proxy and Authzforce) enables you to add OAuth2-based authentication and authorization security to your services and applications.
 
 ## [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
