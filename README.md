@@ -1,6 +1,17 @@
+* [IoTCrawler Framework](#iotcrawler-framework)
+* [MetaData Repository](#metadata-repository)
+* [Indexing](#indexing)
+* [Ranking](#ranking)
+* [Orchestrator](#orchestrator)
+* [Search Enabler](#search-enabler)
+* [Authorization Enabler](#authorization-enabler)
+  * [XACML PAP PDP](#xacml-pap-pdp)
+* [Semantic Enrichment](#semantic-enrichment)
+* [License](#license)
+
 # IoTCrawler Framework
 IoTCrawler is a research project funded under the European Union's Horizon 2020 reserach and innovation program. The aim of the project is to develop a search engine for the Internet of Things (IoT), enabling search on it’s devices. IoTCrawler focuses on integration and interoperability across different platforms, dynamic and reconfigurable solutions for discovery and integration of data and services from legacy and new systems, adaptive, privacy-aware and secure algorithms and mechanisms for crawling, indexing, and search in distributed IoT systems. The project spans industry, universities and cities. It is comporised of multiple components:
-## [MetaData Repository - Scorpio Broker](https://github.com/IoTCrawler/ScorpioBroker)
+## [MetaData Repository](https://github.com/IoTCrawler/ScorpioBroker)
 The core component of the architecture of IoTCrawler is what we call MetaData Repository, which can be seen as a Context Broker with the features of distributing information following both query-response and publication-subscription patters among the other components of the IoTCrawler architecture. This Context Broker must be capable of representing semantic, linked data and property graphs. These features has been included in NGSI-LD, a new standard which has been conducted under the ETSI ISG CIM initiative. For this reason, we have selected this technology for the instantiation of our MetaData Repository. 
 
 Scorpio is an NGSI-LD compliant context broker developed by NEC Laboratories Europe and NEC Technologies India. This project is part of [FIWARE](https://www.fiware.org/). For more information check the FIWARE Catalogue entry for [Core Context](https://github.com/Fiware/catalogue/tree/master/core). We have selected this broker for the instantiation of our MetaData Repository because of their features related to the representation of distribution and federation scenarios.
@@ -37,5 +48,5 @@ The Semantic Enrichment (SE) component is responsible for annotating data stream
 
 ### [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
 As part of the Semantic Enrichment component, the Pattern Extraction module enables the generation of higher-level context by analysing the annotated IoT data streams retrieved from IoT data sources that are pushed to the Metadata Repository. The Pattern Extractor uses the ```iot-stream:StreamObservations``` to detect higher-level events, which are then published to the broker. A machine learning method is used to analyse a group of ```sosa:observesProperties```. This analysis model is registered as a new subscription in the broker. This subscription includes spatial and temporal and the data type specifications for data streams. Once a stream matches the specifications of a registered process, the pattern extractor then caches the observations that are necessary to perform the analysis. When the observations are received for each stream in the group, the pattern extractor constructs a time window to analyse the data. The result of the analysis is a label for a pattern of data. This label, together with the start and end times of the pattern, is then represented as an ```iot-stream:Event``` NGSI-LD entity and published into the broker. The broker then makes these patterns searchable.
-
-
+## License
+The information here is made available under the Apache License, Version 2.0 (Apache-2.0), located in the [LICENSE](LICENSE) file.
