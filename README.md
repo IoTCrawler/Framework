@@ -1,3 +1,4 @@
+![IoTCrawler](images/IoTCrawler_Logo.png)
 * [IoTCrawler Framework](#iotcrawler-framework)
   * [MetaData Repository](#metadata-repository)
   * [Indexing](#indexing)
