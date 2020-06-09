@@ -31,7 +31,10 @@ Since the DCapBAC technology decouples the authorisation in two phases: one for 
 ### [Security Facade](https://github.com/IoTCrawler/Security-Facade)
 This component has been designed as an endpoint for performing both authentication and authorisation operations in an transparent way for the requester. By receiving the corresponding request it interacts with both Identity Manager and Authorisation Enabler, and in case the requester owns the appropriate permissions for the request, it sends the authorsation token (Capability Token) back to the requester.
 
-## [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
-
 ## [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment)
 The Semantic Enrichment (SE) component is responsible for annotating data streams with Quality of Information (QoI). To calculate the QoI the SE subscribes to the MDR for changes in IoTStreams. When receiveing notifications for a stream it takes the related metadata of the stream and generates the QoI annotation, which is stored in the MDR afterwards to be accessible by other components of the framework.
+
+### [Pattern Extractor](https://github.com/IoTCrawler/Pattern-Extractor)
+As part of the Semantic Enrichment component, the Pattern Extraction module enables the generation of higher-level context by analysing the annotated IoT data streams retrieved from IoT data sources that are pushed to the Metadata Repository. The Pattern Extractor uses the ```iot-stream:StreamObservations``` to detect higher-level events, which are then published to the broker. A machine learning method is used to analyse a group of ```sosa:observesProperties```. This analysis model is registered as a new subscription in the broker. This subscription includes spatial and temporal and the data type specifications for data streams. Once a stream matches the specifications of a registered process, the pattern extractor then caches the observations that are necessary to perform the analysis. When the observations are received for each stream in the group, the pattern extractor constructs a time window to analyse the data. The result of the analysis is a label for a pattern of data. This label, together with the start and end times of the pattern, is then represented as an ```iot-stream:Event``` NGSI-LD entity and published into the broker. The broker then makes these patterns searchable.
+
+
