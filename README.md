@@ -1,4 +1,6 @@
-![IoTCrawler](images/IoTCrawler_Logo.png)
+
+<img src="images/IoTCrawler_Logo.png" width="200" height="34" />
+
 * [IoTCrawler Framework](#iotcrawler-framework)
   * [MetaData Repository](#metadata-repository)
   * [Indexing](#indexing)
