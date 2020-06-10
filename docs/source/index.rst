@@ -21,3 +21,6 @@ search in distributed IoT systems.
    getting-started/getting-started
    tutorials/tutorials
    architecture/architecture.rst
+   contributing/contributing
+   glossary
+   releases/releases
