@@ -7,7 +7,7 @@
 IoTCrawler Platform
 ======================================
 
-.. image:: images/IoTCrawler_Logo.png
+.. image:: images/iotcrawler-logo.png
 
 IoTCrawler focuses on integration and interoperability across different platforms for discovery and 
 integration of data and services from legacy and new systems and mechanisms for crawling, indexing, and 
