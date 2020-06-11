@@ -5,7 +5,7 @@
 	  navigation panel.
 
 IoTCrawler Platform
-======================================
+===================
 
 .. image:: images/iotcrawler-logo.png
 
