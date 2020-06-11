@@ -17,7 +17,7 @@ search in distributed IoT systems.
    :maxdepth: 1
 
    introduction
-   key-concepts/key-concepts
+   key-concepts
    getting-started/getting-started
    tutorials/tutorials
    architecture/architecture.rst
