@@ -6,6 +6,7 @@ Key Concepts
    :maxdepth: 1
 
    key-concepts/overview
+   key-concepts/iotcrawler-model
    metadata-repository/metadata-repository
    orchestrator/orchestrator
    ranking/ranking
