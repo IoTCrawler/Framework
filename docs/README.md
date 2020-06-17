@@ -12,7 +12,7 @@ The documentation is generated for each commit in the master branch. Therefore, 
 
    ```
    cd Framework/docs
-   pip3 install requirements.txt
+   pip3 install -r requirements.txt
    ```
 ### Build
 Make your changes and run following commands to generate html documentation.
