@@ -243,7 +243,7 @@ In the example script this is done in a threaded way to avoid blocking.
 The broker returns several HTTP status codes for feedback while accessing
 its interface at 
 
-.. http:get:: /ngsi-ld/v1/entities/:
+.. http:post:: /ngsi-ld/v1/entities/:
 
   :statuscode 201: entity was successfully created 
   :statuscode 400: bad request, the entity is probably not in ngsi-ld format
