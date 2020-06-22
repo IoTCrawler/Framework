@@ -1,9 +1,9 @@
 Sensor Integration
 ==================
-In this section we provide and example on how to include sensor data into the IoTCrawler framework. The sourcecode for this example can be accessed ad https://github.com/IoTCrawler/iotcrawler-samples/tree/master/sensorintegration.
+In this section, we provide and example on how to include sensor data into the IoTCrawler framework. The sourcecode for this example can be accessed at https://github.com/IoTCrawler/iotcrawler-samples/tree/master/sensorintegration.
 
 
-This example 'translates' CityProbe date available at
+This example 'translates' CityProbe data available at
 https://www.opendata.dk/city-of-aarhus/bymiljo-aarhus-cityprobe into the
 IoTCrawler information model. The information model can be found at ...
 
@@ -188,7 +188,7 @@ For demonstration we have set the limit to 1.
 
 The provided data contains some meta information within the fields list.
 The data itself is contained in the records list. In our case there is
-just one entry because of the set limit. So let us just have a look at
+just one entry because of the limit set before. So let us just have a look at
 the "data":
 
 ::
@@ -212,18 +212,18 @@ the "data":
         "device_id": null
     }
 
-As can be seen the data contains noise, CO, temperature, PM10, battery,
-rain, humidity, illuminance, pressure, PM2.5, and NO2 as data fields.
-Besides that deviceid contains the relation to the measurung sensor and
-published\_at containes a timestamp of the measurement. The other fields
+As can be seen the data contains *noise*, *CO*, *temperature*, *PM10*, *battery*,
+*rain*, *humidity*, *illuminance*, *pressure*, *PM2.5*, and *NO2* as data fields.
+Besides that, *deviceid* contains the relation to the measuring sensor and
+*published\_at* contains a timestamp of the measurement. The other fields
 are not used in this example.
 
 Translation into IoTCrawler model
 ---------------------------------
 
-In the IoTCrawler information modell (cf. ...) we have to split the
+In the IoTCrawler information model (cf. ...) we have to split the
 provided information from the CityProbe dataset. In our example we will
-have
+have:
 
 - 1 Platform hosting 11 sensors
 - 11 Sensors (one for each datafield) 
@@ -236,14 +236,12 @@ With the help of the provided script these entities are created. For details ple
 Connection to MDR/Broker
 ------------------------
 
-The translated data is stored into the MDR by using the standardise
-NGSI-LD API (see `NGSI-LD
-API <https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.02.01_60/gs_CIM009v010201p.pdf>`__)
-In the example script this is done in a threaded way to avoid blocking.
-The broker returns several HTTP status codes for feedback while accessing
-its interface at 
+The translated data is stored into the MDR by using the standardised NGSI-LD API (see `NGSI-LD
+API <https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.02.01_60/gs_CIM009v010201p.pdf>`__).
+In the example script, this is done in a threaded way to avoid blocking.
+The broker can return several HTTP status codes as feedback, while accessing its interface at:
 
-.. http:post:: /ngsi-ld/v1/entities/:
+.. http:post:: /ngsi-ld/v1/entities/
 
   :statuscode 201: entity was successfully created 
   :statuscode 400: bad request, the entity is probably not in ngsi-ld format
@@ -252,10 +250,11 @@ its interface at
 
 In case of a 409 status code we have to PATCH the entity as it is
 already existing. The interface will change to
-/ngsi-ld/v1/entities/ENTITYID/attrs/ were ENTITYID has to be replaced by
-the entity that should be updated. Additionally the id and type has to
-be deleted from the provided entity in NGSI-LD format. Within the script
-this is done automatically.
+
+.. http:post:: /ngsi-ld/v1/entities/ENTITYID/attrs/
+
+where *ENTITYID* has to be replaced by the entity that should be updated. Additionally, the *id* and *type* has to
+be deleted from the provided entity in NGSI-LD format. Within the script this is done automatically.
 
 Sourcecode
 ----------
