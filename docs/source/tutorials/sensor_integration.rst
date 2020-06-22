@@ -1,5 +1,5 @@
 Sensor Integration
-=================
+==================
 In this section we provide and example on how to include sensor data into the IoTCrawler framework. The sourcecode for this example can be accessed ad https://github.com/IoTCrawler/iotcrawler-samples/tree/master/sensorintegration.
 
 
