@@ -3,6 +3,7 @@
 
 * [IoTCrawler Framework](#iotcrawler-framework)
 * [Documentation](#documentation)
+* [Contributing](#contributing)
 * [About Us](#about-us)
 * [License](#license)
 
@@ -12,6 +13,9 @@ IoTCrawler is a research project funded under the European Union's Horizon 2020 
 # Documentation
 Please find further information about the architecture, getting started and tutorials on our online documentattion.
 * [latest](https://iotcrawler.readthedocs.io/en/latest/index.html)
+
+# Contributing
+IoTCrawler is an Open Souce, community driven reseacrch project. We welcome your [contribution](https://iotcrawler.readthedocs.io/en/latest/contributing/contributing.html) in the project.
 
 # About Us
 The IoTCrawler project consists of 10 [partners](https://iotcrawler.eu/index.php/partners/) from across EU and is a combination of research institutions, leading technological industries and a municipality.
