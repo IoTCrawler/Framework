@@ -52,12 +52,11 @@ The search enabler component has an extendable schemas mechanism described in fu
 The `IoTCrawler's Core Schema <https://github.com/IoTCrawler/Search-Enabler/blob/master/src/resources/schemas/iotcrawler.graphqls>`_ defines core types (such as IoTStream, Sensor, Platform, Observable Property). 
 
 .. image:: ../images/IoTCrawler-Model.png
-  :width: 400
-  :alt: GraphiQL Environment
+   :alt: GraphiQL Environment
 
 Due to support of type inheritance (feature of IoTCrawler's `GraphQL-based Search Enabler <https://github.com/IoTCrawler/Search-Enabler>`_), the schema is compliant with `SOSA ontology <https://www.w3.org/TR/vocab-ssn/>`_.
 
-For example, accoding to SOSA a platform (SOSA:Platform) hosts systems (SSN:System), which includes sensors(SOSA:Sensor), actuators (SOSA:Actuator) and samples (SOSA:Sample). 
+For example, accoding to SOSA a platform (`SOSA:Platform`) hosts systems (`SSN:System`), which includes sensors (SOSA:Sensor), actuators (SOSA:Actuator) and samples (SOSA:Sample). 
 
 Browsing platforms
 ------------------------
@@ -105,7 +104,7 @@ Browsing observable properties
 ------------------------
 Let's return back to our use-case, where we want to find streams matching the criteria and get their measurements. 
 
-Before searching streams by a certain observable property let's have a quick look at observable properties registered in the IoTCrawler platform. The list of results can be paginated using the `limit` and `offset` variables. By detault limit is 500 (maximal of broker). 
+Before searching streams by a certain observable property let's have a quick look at observable properties registered in the IoTCrawler platform. Let can query all the obsrvable properties as paginated list by using the `limit` and `offset` variables. By detault limit is 500 (maximal of broker). 
 
 ::
 
