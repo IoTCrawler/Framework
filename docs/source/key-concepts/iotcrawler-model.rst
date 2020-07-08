@@ -9,6 +9,7 @@ IoTCrawler Model
   * :ref:`Search Enabler` --- 2 lines description
   * :ref:`Authorization Enabler` --- 2 lines description
   * :ref:`Semantic Enrichment` --- 2 lines description
+  * :ref:`Monitoring` --- 2 lines description
 
 .. _MetaData Repository:
 
@@ -79,3 +80,9 @@ Semantic Enrichment
 The Semantic Enrichment (SE) component is responsible for annotating data streams with Quality of Information (QoI). To calculate the QoI the 
 SE subscribes to the MDR for changes in IoTStreams. When receiving notifications for a stream it takes the related metadata of the stream and 
 generates the QoI annotation, which is stored in the MDR afterwards to be accessible by other components of the framework.
+
+.. _Monitoring:
+
+Monitoring
+----------
+The Monitoring component is responsible for observing data streams to detect anomalies...
