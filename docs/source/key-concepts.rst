@@ -13,3 +13,4 @@ Key Concepts
    indexing/indexing
    authorization-enabler/authorization-enabler
    semantic-enrichment/semantic-enrichment
+   monitoring/monitoring
