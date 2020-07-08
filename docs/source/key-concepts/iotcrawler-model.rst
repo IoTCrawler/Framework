@@ -85,4 +85,4 @@ generates the QoI annotation, which is stored in the MDR afterwards to be access
 
 Monitoring
 ----------
-The Monitoring component is responsible for observing data streams to detect anomalies.
+The Monitoring component is responsible for observing data streams to detect anomalies...
