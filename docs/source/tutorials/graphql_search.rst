@@ -10,14 +10,14 @@ Introduction
 ------------------------
 GraphQL-based search enabler provides a flexible capabilities for searching metadata about Streams, Sensors and Observable Properties registered in IoTCrawler Metadata Repository (MDR).
 
-In this tutorial we demonstating a use-case of finding streams delivering a certain type of measurements.
+In this tutorial we demonstrating a use-case of finding streams delivering a certain type of measurements.
 
-All the demonstated queries can be executed in the online `GraphiQL Environment <http://search-enabler.iotcrawler.eu/>`_ using the supplied links. 
+All the demonstrated queries can be executed in the online `GraphiQL Environment <http://search-enabler.iotcrawler.eu/>`_ using the supplied links. 
 
 GraphiQL
 ------------------------
 
-The GraphiQL is a simple IDE for constucting and testing queries against a GraphQL endpoint. GraphiQL might be provided by endpoint provider (like it is `provided by IoTCrawler <http://search-enabler-production.35.241.228.250.nip.io>`_ ) or user might run it `locally using the desktop client <https://www.electronjs.org/apps/graphiql>`_.
+The GraphiQL is a simple IDE for constructing and testing queries against a GraphQL endpoint. GraphiQL might be provided by endpoint provider (like it is `provided by IoTCrawler <http://search-enabler-production.35.241.228.250.nip.io>`_ ) or user might run it `locally using the desktop client <https://www.electronjs.org/apps/graphiql>`_.
 
 GraphiQL provides interactive user assistance functions such as query validation, auto completion (Ctrl+Space), undo/redo, formatting, history and many others.
 
@@ -56,11 +56,11 @@ The `IoTCrawler's Core Schema <https://github.com/IoTCrawler/Search-Enabler/blob
 
 Due to support of type inheritance (feature of IoTCrawler's `GraphQL-based Search Enabler <https://github.com/IoTCrawler/Search-Enabler>`_), the schema is compliant with `SOSA ontology <https://www.w3.org/TR/vocab-ssn/>`_.
 
-For example, accoding to SOSA a platform (`SOSA:Platform`) hosts systems (`SSN:System`), which includes sensors (SOSA:Sensor), actuators (SOSA:Actuator) and samples (SOSA:Sample). 
+For example, according to SOSA a platform (`SOSA:Platform`) hosts systems (`SSN:System`), which includes sensors (`SOSA:Sensor`), actuators (`SOSA:Actuator`) and samples (`SOSA:Sample`). 
 
 Browsing platforms
 ------------------------
-For demonstating inheritance support lets browse over the platforms and objects they host. This can be done by performing the following query:
+For demonstrating inheritance support lets browse over the platforms and objects they host. This can be done by performing the following query:
 
 ::
 
@@ -104,7 +104,7 @@ Browsing observable properties
 ------------------------
 Let's return back to our use-case, where we want to find streams matching the criteria and get their measurements. 
 
-Before searching streams by a certain observable property let's have a quick look at observable properties registered in the IoTCrawler platform. Let can query all the obsrvable properties as paginated list by using the `limit` and `offset` variables. By detault limit is 500 (maximal of broker). 
+Before searching streams by a certain observable property let's have a quick look at observable properties registered in the IoTCrawler platform. Let can query all the observable properties as paginated list by using the `limit` and `offset` variables. The default limit is 500 (maximal of broker). 
 
 ::
 
@@ -196,7 +196,7 @@ Response should look like below:
 Searching streams
 ------------------------
 
-Finally we need to get streams, which are matching our criteria. For doing this we can filter streams by sensor id (which we've found on a previous step) or by specifiyng our condition (observes temperature) directly for a filter in the streams query:
+Finally we need to get streams, which are matching our criteria. For doing this we can filter streams by sensor id (which we've found on a previous step) or by specifying our condition (observes temperature) directly for a filter in the streams query:
 
 ::
 
@@ -245,7 +245,7 @@ The results would reflect the details about streams (`id`), their sensors (under
     ..
   }
 
-The example demostates that it is possible to filter the target object together with all the relevant information (stream, sensor, platform, observable property) in one GraphQL query. 
+The example demonstrates that it is possible to filter the target object together with all the relevant information (stream, sensor, platform, observable property) in one GraphQL query. 
 
 Searching stream observations
 ------------------------
@@ -254,7 +254,7 @@ Stream observations are not considered as metadata and not expected to be stored
 
 Subscription is the most expected way of receiving stream observations. But there is still an opportunity to request the actual state of a certain stream observation.
 
-Perfrom the following query to return stream observations of streams, we have've been interested in previous examples:
+Perform the following query to return stream observations of streams, we have been interested in previous examples:
 
 ::
 
@@ -333,15 +333,15 @@ Let's create a couple of specific sensor types: the `Temperature Sensor` and `In
       indoorTemperatureSensors(isHostedBy: PlatformInput, observes: ObservablePropertyInput, offset: Int = 0, limit: Int = 0): [IndoorTemperatureSensor]
   }
 
-  type TemperatureSensor @resource(class : "http://Agt/TemperatureSensor", subClassOf: ["Sensor"]){
+  type TemperatureSensor @resource(class : "http://purl.org/iot/ontology/extended-iot-stream#TemperatureSensor", subClassOf: ["Sensor"]){
 
   }
 
-  type IndoorTemperatureSensor @resource(class : "http://Agt/IndoorTemperatureSensor", subClassOf: ["TemperatureSensor"]){
+  type IndoorTemperatureSensor @resource(class : "http://purl.org/iot/ontology/extended-iot-stream#IndoorTemperatureSensor", subClassOf: ["TemperatureSensor"]){
 
   }
 
-As you can see, the schema introdices two additional data types (but not extending them with additional fields). Due to two new queries new sensors can be queried in GraphiQL. 
+As you can see, the schema introduces two additional data types (but not extending them with additional fields). Due to two new queries new sensors can be queried in GraphiQL. 
 The schema reuses types (e.g. Sensor, PlatformInput, etc.) from the other schemas (the core schema in this case).
 
 Let's first query indoor temperature sensors as the most specific data type:
@@ -380,7 +380,7 @@ The result will reflect the temperature sensor we've registered with the `follow
         {
           "id": "urn:ngsi-ld:IndoorTemperatureSensor_1",
           "type": "http://www.w3.org/ns/sosa/Sensor",
-          "alternativeType": "http://Agt/IndoorTemperatureSensor",
+          "alternativeType": "http://purl.org/iot/ontology/extended-iot-stream#TemperatureSensor",
           "label": null,
           "observes": null,
           "isHostedBy": {
@@ -402,7 +402,7 @@ The result will reflect the temperature sensor we've registered with the `follow
     }
   }
 
-You can see that entity still has type `http://www.w3.org/ns/sosa/Sensor` and the `http://Agt/IndoorTemperatureSensor` is declated as `alternativeType`. This makes the indoor temperature sensors searchable while "sensors()" queries.
+You can see that entity still has type `http://www.w3.org/ns/sosa/Sensor` and the `http://purl.org/iot/ontology/extended-iot-stream#TemperatureSensor` is declared as `alternativeType`. This makes the indoor temperature sensors searchable while "sensors()" queries.
 
 
 
@@ -443,7 +443,7 @@ The result should return back at least two sensors: one of type `temperature sen
         {
           "id": "urn:ngsi-ld:TemperatureSensor_1",
           "type": "http://www.w3.org/ns/sosa/Sensor",
-          "alternativeType": "http://Agt/TemperatureSensor",
+          "alternativeType": "http://purl.org/iot/ontology/extended-iot-stream#TemperatureSensor",
           "label": null,
           "observes": null,
           "isHostedBy": {
@@ -464,7 +464,7 @@ The result should return back at least two sensors: one of type `temperature sen
         {
           "id": "urn:ngsi-ld:IndoorTemperatureSensor_1",
           "type": "http://www.w3.org/ns/sosa/Sensor",
-          "alternativeType": "http://Agt/IndoorTemperatureSensor",
+          "alternativeType": "http://purl.org/iot/ontology/extended-iot-stream#IndoorTemperatureSensor",
           "label": null,
           "observes": null,
           "isHostedBy": {
@@ -486,7 +486,7 @@ The result should return back at least two sensors: one of type `temperature sen
     }
   }
 
-And again you can see, that both of them have type `sosa:Sensor` and their real types are declated as `alternativeType`. 
+And again you can see, that both of them have type `sosa:Sensor` and their real types are declared as `alternativeType`. 
 
 The alternative type is an optional filed and is interpreted by the search-enabler only. 
 
