@@ -1,6 +1,6 @@
 # IoTCrawler Framework Documentation [![Documentation Status](https://readthedocs.org/projects/iotcrawler/badge/?version=latest)](https://iotcrawler.readthedocs.io/en/latest/?badge=latest)
 IoTCrawler uses [Read the Docs](https://readthedocs.org/) for software documentation. It facilitates automatic building, versioning, and hosting of the documentation. The [Sphinx](https://www.sphinx-doc.org/en/master/) tool is used to build the documentation using the [theme](https://github.com/readthedocs/sphinx_rtd_theme).
-The documentation is generated for each commit in the master branch. Therefore, it is advised to build locally for update, preview and design. The [section](#update-documentation) describe the procedure. You could find the documentation [here](https://iotcrawler.readthedocs.io/en/latest/index.html).
+The documentation is generated for each commit in the master branch. Therefore, it is advised to build locally for update, preview and design. The [section](#update-documentation) describe the procedure. You could find the latest version of [documentation](https://iotcrawler.readthedocs.io/en/latest/index.html) online.
 
 ## Update Documentation
 ### Setup
