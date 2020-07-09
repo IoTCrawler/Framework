@@ -1,6 +1,8 @@
 
 <img src="images/IoTCrawler_Logo.png" width="200" height="34" />
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 * [IoTCrawler Framework](#iotcrawler-framework)
 * [Documentation](#documentation)
 * [Contributing](#contributing)
@@ -8,7 +10,7 @@
 * [License](#license)
 
 # IoTCrawler Framework
-IoTCrawler is a research project funded under the European Union's Horizon 2020 research and innovation program. The aim of the project is to develop a search engine for the Internet of Things (IoT), enabling search on it’s devices. IoTCrawler focuses on integration and interoperability across different platforms, dynamic and reconfigurable solutions for discovery and integration of data and services from legacy and new systems, adaptive, privacy-aware and secure algorithms and mechanisms for crawling, indexing, and search in distributed IoT systems. The project spans industry, universities and cities. It is comporised of multiple components:
+IoTCrawler is a research project funded under the European Union's Horizon 2020 research and innovation program. The aim of the project is to develop a search engine for the Internet of Things (IoT). IoTCrawler focuses on integration and interoperability across different platforms, dynamic and reconfigurable solutions for discovery and integration of data and services from legacy and new systems. It facilitates adaptive, and privacy-aware secure algorithms and mechanisms for crawling, indexing, and ranking in distributed IoT systems. The project spans industry, universities and cities.
 
 # Documentation
 Please find further information about the architecture, getting started and tutorials on our online documentattion.
