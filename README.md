@@ -10,7 +10,7 @@
 * [License](#license)
 
 # IoTCrawler Framework
-IoTCrawler is a research project funded under the European Union's Horizon 2020 research and innovation program. The aim of the project is to develop a search engine for the Internet of Things (IoT). IoTCrawler focuses on integration and interoperability across different platforms, dynamic and reconfigurable solutions for discovery and integration of data and services from legacy and new systems. It facilitates adaptive, and privacy-aware secure algorithms and mechanisms for crawling, indexing, and ranking in distributed IoT systems. The project spans industry, universities and cities.
+IoTCrawler is a research project funded under the European Union's Horizon 2020 research and innovation program. The aim of the project is to develop a search engine for the Internet of Things (IoT). IoTCrawler focuses on integration and interoperability across different platforms, dynamic and reconfigurable solutions for discovery and integration of data and services from legacy and new systems. It facilitates adaptive, and privacy-aware secure algorithms and mechanisms for crawling, indexing, and ranking in distributed IoT systems. The project spans among multiple industries, universities and cities.
 
 # Documentation
 Please find further information about the architecture, getting started and tutorials on our online documentattion.
