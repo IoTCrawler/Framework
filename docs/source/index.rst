@@ -11,7 +11,7 @@ IoTCrawler Platform
 
 IoTCrawler focuses on integration and interoperability across different platforms for discovery and 
 integration of data and services from legacy and new systems and mechanisms for crawling, indexing, and 
-search in distributed IoT systems.
+searching in distributed IoT systems.
 
 .. toctree::
    :maxdepth: 1
