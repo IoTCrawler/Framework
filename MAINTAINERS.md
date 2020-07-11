@@ -28,3 +28,12 @@
 | Martin                  | [mstrohbach][mstrohbach]     | <MStrohbach@agtinternational.com> |
 | Josiane Xavier Parreira | [josixp][josixp]             | <josiane.parreira@siemens.com>    |
 | Thorben                 | [tanktoo][tanktoo]           | <t.iggena@hs-osnabrueck.de>       |
+
+
+[jamartinez79]: https://github.com/jamartinez79
+[stefanbischof]: https://github.com/stefanbischof
+[tanktoo]: https://github.com/tanktoo
+[josixp]: https://github.com/josixp
+[mstrohbach]: https://github.com/mstrohbach
+[b-rohit]: https://github.com/b-rohit
+[smirnp]: https://github.com/smirnp
