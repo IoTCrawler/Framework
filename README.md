@@ -17,7 +17,7 @@ IoTCrawler is a research project funded under the European Union's Horizon 2020 
 - [Indexing](https://github.com/IoTCrawler/Indexing) is utilized to crawl and index IoT entities with queries based on sensor type and location.
 - [Ranking](https://github.com/IoTCrawler/Ranking) aims to aid users and applications to not only find a set of resources relevant to their needs, but also to select the best or most appropriate one(s) from the set.
 - [Semantic Enrichment](https://github.com/IoTCrawler/SemanticEnrichment) is responsible for annotating data streams with Quality of Information (QoI).
-- [Authorization Enabler] is comprized of [PAP-PDP](https://github.com/IoTCrawler/PAP-PDP), [PEP-Proxy](https://github.com/IoTCrawler/PEP-Proxy), [Keyrock](https://github.com/IoTCrawler/Keyrock), [Security Facade](https://github.com/IoTCrawler/Security-Facade), [Capability Manager](https://github.com/IoTCrawler/Capability-Manager) and [Blockchain Handler]() which all put in place to establish security in the IoTCrawler framework.
+- [Authorization Enabler]() is comprized of [PAP-PDP](https://github.com/IoTCrawler/PAP-PDP), [PEP-Proxy](https://github.com/IoTCrawler/PEP-Proxy), [Keyrock](https://github.com/IoTCrawler/Keyrock), [Security Facade](https://github.com/IoTCrawler/Security-Facade), [Capability Manager](https://github.com/IoTCrawler/Capability-Manager) and [Blockchain Handler]() which all put in place to establish security in the IoTCrawler framework.
 
 # Documentation
 
