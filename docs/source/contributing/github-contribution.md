@@ -55,3 +55,69 @@ How to clone a repository?
   ```
 
 Now, everything is set to start developing and making the IoTCrawler platform better.
+
+## Create Feature Branch
+
+All IoTCrawler component repositories have a main branch called `master`. The `master` branch contains the stable code of the component. The main idea behind using a feature branch for development is to keep the `master` branch unaffected from broken code in new feature. A developer should create a feature branch in its fork repository to develop new feature, to fix an issue, to purpose changes etc. A feature branch provides encapsulation from the main codebase. That means the `master` branch is isolated from errors caused by broken code of a new commit. It keeps the main codebase clean and stable.
+
+How to create feature branch ?
+
+- Fetch commits, files and refs from the upstream repository
+  ```
+  git fetch upstream
+  ```
+- Checkout to `master` branch
+  ```
+  git checkout master
+  ```
+- Merge upstream changes to local master branch
+  ```
+  git merge upstream/master
+  ```
+- Push changes to remote master in forked repo
+  ```
+  git push origin master
+  ```
+- Now, you have your origin/master and upstream/master synced. This process ensures there are no discrepancies between two branches and new feature branch is an exact copy of them.
+  ```
+  git checkout -b <feature_branch_name>
+  ```
+
+With this, you have a new feature branch, where you can make changes.
+
+## Push changes to your Forked Repository
+
+When you are done creating a new feature or fixing an issue in your feature branch, it is time to commit and push your changes to forked repository. This process will save the state in remote branch in forked repository. Later, this state will be used to create pull request to IoTCrawler component repository.
+
+How to push ?
+
+- Add your modified, delete and new files to the index
+  ```
+  git add <file1> <file2>
+  ```
+- You can now commit the current contents of the index. This will capture a snapshot of the project's currently staged changes. Your commit message must contain the following information:
+  - one line summary of the changes in this commit as title, followed by an empty line
+  - explain why this change is needed, and how you approached it in the commit message body. This helps reviewers better understand your code and often speeds up the review process.
+  ```
+  git commit -s
+  ```
+- Push changed to your forked repository
+  ```
+  git push origin <feature_branch_name>
+  ```
+
+At the end of this process you have developed a new feature or fixed an issue and pushed it to your forked repository. At this moment, your changes in the forked repository are ready to be integrated with IoTCrawler component repository. This can be done by making a pull request to IoTCrawler repository.
+
+## Opening a Pull Request in GitHub
+
+Once you have pushed your changes to the feature branch in your forked repo, you can now open a pull request against the original IoTCrawler component repository. This is going to be easiest of all tasks you have completed previously in this thread.
+
+How to open Pull request ?
+
+- Navigate to your forked repository `https://github.com/<user-name>/<forked_repository>`.
+- For new changes, automatically it will be shown that there are some differences between forked and original repository. Click on `Compare & pull request`.
+  ![pull](pull.jpg)
+- You will be navigated to original IoTCrawler repository. Here, you can change title and comment message if you want and click on `Create pull request`.
+  ![Create pull](open-pull.jpg)
+
+Excelente, you just open your first pull request in IoTCrawler project. The pull request will be reviewed and merged in the original IoTCrawler repository.
