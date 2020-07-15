@@ -115,4 +115,9 @@ Once you have pushed your changes to the feature branch in your forked repo, you
 How to open Pull request ?
 
 - Navigate to your forked repository `https://github.com/<user-name>/<forked_repository>`.
--
+- For new changes, automatically it will be shown that there are some differences between forked and original repository. Click on `Compare & pull request`.
+  ![pull](pull.jpg)
+- You will be navigated to original IoTCrawler repository. Here, you can change title and comment message if you want and click on `Create pull request`.
+  ![Create pull](open-pull.jpg)
+
+Excelente, you just open your first pull request in IoTCrawler project. The pull request will be reviewed and merged in the original IoTCrawler repository.
