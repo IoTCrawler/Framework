@@ -32,14 +32,16 @@ To introspect the GraphQL schema of a particular endpoint execute the following 
 ::
 
   {
-    __schema{
-    types{
-      name
-      fields{
+    __schema {
+      types {
         name
-        type {name}
+        fields {
+          name
+          type {
+            name
+          }
+        }
       }
-    }
     }
   }
 
@@ -66,13 +68,13 @@ For demonstrating inheritance support lets browse over the platforms and objects
 ::
 
   {
-    platforms (offset:0, limit:5){
-      id,
-      hosts{
-        id,
+    platforms(offset: 0, limit: 5) {
+      id
+      hosts {
+        id
         type
       }
-    }  
+    }
   }
 
 `Run online <https://search-enabler.iotcrawler.eu/?query=%7B%0A%20%20platforms%20(offset%3A0%2C%20limit%3A5)%7B%0A%20%20%20%20id%2C%0A%20%20%20%20hosts%7B%0A%20%20%20%20%20%20id%2C%0A%20%20%20%20%20%20type%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D>`__
@@ -81,24 +83,24 @@ The result will look as below.
 ::
 
  "platforms": [
-      {
-        "id": "urn:ngsi-ld:Platform:B4:E6:2D:8A:20:DD",
-        "hosts": [
-          {
-            "id": "urn:ngsi-ld:Sensor:B4:E6:2D:8A:20:DD:IAQ",
-            "type": "http://www.w3.org/ns/sosa/Sensor"
-          },
-          {
-            "id": "urn:ngsi-ld:Sensor:B4:E6:2D:8A:20:DD:Temperature",
-            "type": "http://www.w3.org/ns/sosa/Sensor"
-          },
-          {
-            "id": "urn:ngsi-ld:Sensor:B4:E6:2D:8A:20:DD:Humidity",
-            "type": "http://www.w3.org/ns/sosa/Sensor"
-          }
-        ]
-      }
-    ]
+    {
+      "id": "urn:ngsi-ld:Platform:B4:E6:2D:8A:20:DD",
+      "hosts": [
+        {
+          "id": "urn:ngsi-ld:Sensor:B4:E6:2D:8A:20:DD:IAQ",
+          "type": "http://www.w3.org/ns/sosa/Sensor"
+        },
+        {
+          "id": "urn:ngsi-ld:Sensor:B4:E6:2D:8A:20:DD:Temperature",
+          "type": "http://www.w3.org/ns/sosa/Sensor"
+        },
+        {
+          "id": "urn:ngsi-ld:Sensor:B4:E6:2D:8A:20:DD:Humidity",
+          "type": "http://www.w3.org/ns/sosa/Sensor"
+        }
+      ]
+    }
+  ]
 
 As you can see, resulting platforms host sensors, while `schema <https://github.com/IoTCrawler/Search-Enabler/blob/master/src/resources/schemas/iotcrawler.graphqls>`_ declares, that `Platform` hosts `System`. This is possible due to type inheritance feature described above.
 
@@ -111,9 +113,9 @@ Before searching streams by a certain observable property let's have a quick loo
 ::
 
   {
-    observableProperties (offset:0, limit:5) {
-      id,
-      label,
+    observableProperties(offset: 0, limit: 5) {
+      id
+      label
     }
   }
 
@@ -159,19 +161,15 @@ In order to do so perform the following query:
 
 ::
 
-  { 
-      sensors(observes: {
-                          label: "temperature"
-                        }
-            ){
-                      id,
-                      label,
-                      isHostedBy{  #Platform
-                        id,
-                      }
-                      
-                  }
+  {
+    sensors(observes: {label: "temperature"}) {
+      id
+      label
+      isHostedBy {
+        id
+      }
     }
+  }
 
 `Run online <http://search-enabler.iotcrawler.eu/?query=%7B%20%0A%20%20%20%20%20%20sensors(observes%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3A%20%22temperature%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20)%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20isHostedBy%7B%20%20%23Platform%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D>`__
 
@@ -202,24 +200,18 @@ Finally we need to get streams, which are matching our criteria. For doing this 
 
 ::
 
-  { 
-    streams(generatedBy: {
-                        observes: {
-                              label: "temperature"
-                        }
-                }
-                )
-                {
-                    id,
-                    generatedBy { #sensor
-                        id,
-                        label,
-                        isHostedBy{  #platform
-                                      id,
-                                      label,
-                                      },
-                    }
-                }
+  query streams {
+    streams(generatedBy: {observes: {label: "temperature"}}) {
+      id
+      generatedBy {
+        id
+        label
+        isHostedBy {
+          id
+          label
+        }
+      }
+    }
   }
 
 `Run online <http://search-enabler.iotcrawler.eu/?operationName=streams&query=query%20streams%7B%20%20%0A%20%20%20%20streams(generatedBy%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20observes%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%09%20%20label%3A%20%22temperature%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20generatedBy%20%7B%20%23sensor%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20isHostedBy%7B%20%20%23platform%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%7D>`__
@@ -261,28 +253,19 @@ Perform the following query to return stream observations of streams, we have be
 ::
 
   {
-    streamObservations(belongsTo: {
-      generatedBy: {
-                        
-                        observes: {
-                        
-                              label: "temperature"
-                        }
-                }
-    }){
-      id,
-      resultTime,
-      hasSimpleResult,
-      belongsTo{
-        id,
+    streamObservations(belongsTo: {generatedBy: {observes: {label: "temperature"}}}) {
+      id
+      resultTime
+      hasSimpleResult
+      belongsTo {
+        id
         generatedBy {
-          id,
-          observes{
-          id,
-          label
+          id
+          observes {
+            id
+            label
+          }
         }
-        
-      }
       }
     }
   }
@@ -352,23 +335,23 @@ Let's first query indoor temperature sensors as the most specific data type:
 ::
 
   {
-    indoorTemperatureSensors{
-            id,
-            type,
-            alternativeType,
-            label,
-            observes {
-                id,
-                label
-            },
-            isHostedBy{
-                        id,
-                        label,
-                        hosts{
-                                  id,
-                                  label
-                                }
-                      }
+    indoorTemperatureSensors {
+      id
+      type
+      alternativeType
+      label
+      observes {
+        id
+        label
+      }
+      isHostedBy {
+        id
+        label
+        hosts {
+          id
+          label
+        }
+      }
     }
   }
 
@@ -415,23 +398,23 @@ Now let's query temperature sensors, which should include indoor temperature sen
 ::
 
   {
-    temperatureSensors{
-            id,
-            type,
-            alternativeType,
-            label,
-            observes {
-                id,
-                label
-            },
-            isHostedBy{
-                        id,
-                        label,
-                        hosts{
-                                  id,
-                                  label
-                                }
-                      }
+    temperatureSensors {
+      id
+      type
+      alternativeType
+      label
+      observes {
+        id
+        label
+      }
+      isHostedBy {
+        id
+        label
+        hosts {
+          id
+          label
+        }
+      }
     }
   }
 
