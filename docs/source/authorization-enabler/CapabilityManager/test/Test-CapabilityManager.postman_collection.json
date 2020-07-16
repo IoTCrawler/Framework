@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "c2ae832d-25f6-4957-998e-46b2d6377c1c",
+		"name": "Test-CapabilityManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - IDM - Generate token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "98f0157e-3ead-444b-a787-0a1e0d491c1b",
+						"exec": [
+							"var token = postman.getResponseHeader(\"X-Subject-Token\")",
+							"pm.environment.set(\"idmToken\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"admin@test.com\",\n  \"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "https://{{IdM-IP}}:{{IdM-Port}}/v1/auth/tokens",
+					"protocol": "https",
+					"host": [
+						"{{IdM-IP}}"
+					],
+					"port": "{{IdM-Port}}",
+					"path": [
+						"v1",
+						"auth",
+						"tokens"
+					]
+				},
+				"description": "https://fiware-idm.readthedocs.io/en/latest/getting_started/index.html\n\nRequest using default user credentials.\n\nObtain API token from X-Subject-Header in response"
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Capability Manager - Obtain Capability token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a2002c9-febf-4c33-97a5-10f4205d758d",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"CapabilityToken\",  JSON.stringify(jsonData));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"{{idmToken}}\",\"ac\": \"{{action}}\", \"de\": \"https://{{PEP-Proxy-IP}}:{{PEP-Proxy-Port}}\", \"re\": \"{{resource}}\"}\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://{{CapMan-IP}}:{{CapMan-Port}}",
+					"protocol": "https",
+					"host": [
+						"{{CapMan-IP}}"
+					],
+					"port": "{{CapMan-Port}}"
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
