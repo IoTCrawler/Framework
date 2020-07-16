@@ -65,7 +65,7 @@ To obtain Capability Token:
 - Headers: 
   - Content-Type: application/json
 - Body:
-  - Format: {"token": "<subject>","de": "<device>","ac": "<action>","re": "<resource>"}
+  - Format: {"token": "subject","de": "device","ac": "action","re": "resource"}
 
     Where:
     - subject: subject of the resource’s request. In DCapBAC scenario, it could correspond with a token (IDM-KeyRock). For example: “753f103c-d8e5-4f4e-8720-13d5e2f55043”
@@ -79,7 +79,12 @@ Example (HTTP):
 - Content-Type: application/json
 - Body:
   ```json
-  {"token": “753f103c-d8e5-4f4e-8720-13d5e2f55043”,"de": “https://153.55.55.120:2354”,"ac": “GET”,"re": “/ngsi-ld/v1/entities/urn:ngsi-ld:Sensor:humidity.201”}
+  {
+    "token": "753f103c-d8e5-4f4e-8720-13d5e2f55043",
+    "de": "https://153.55.55.120:2354",
+    "ac": "GET",
+    "re": "/ngsi-ld/v1/entities/urn:ngsi-ld:Sensor:humidity.201"
+  }
   ```
 Response (200):
 - Body:
