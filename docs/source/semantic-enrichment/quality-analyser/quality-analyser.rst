@@ -5,8 +5,8 @@ The Semantic Enrichment is one of the core components of the IoTCrawler framewor
 
 Integration into IoTCrawler Framework
 -------------------------------------
-The IoTCrawler framework itself is loosely coupled by a set of single components to be on the one hand side as adoptable as possible, by keeping the flexibility to optimise single components without the need to adapt the complete framework, and on the other hand to ensure scalability.
-The integration mainly focuses on publish/subscribe mechanisms that are used to communicate with the Federated MDR as the central register for all data sources and to access receive data from IoT gateways in different domains. As the example data sources used within the IoTCrawler project focus on NGSI-LD, the NGSI-LD publish/subscribe methods are used, but in principle the data access can also be realised by other access methods like MQTT or AMQP protocols. In these cases, the interfaces must be described in the data source’s metadata.
+The IoTCrawler framework itself is loosely coupled by a set of single components to be on the one hand as adoptable as possible, by keeping the flexibility to optimise single components without the need to adapt the complete framework, and on the other hand to ensure scalability.
+The integration mainly focuses on publish/subscribe mechanisms that are used to communicate with the Federated MDR as the central register for all data sources and to access received data from IoT gateways in different domains. As the example data sources used within the IoTCrawler project focus on NGSI-LD, the NGSI-LD publish/subscribe methods are used, but in principle the data access can also be realised by other access methods like MQTT or AMQP protocols. In these cases, the interfaces must be described in the data source’s metadata.
 
 
 .. image:: integration.png
@@ -17,8 +17,8 @@ The integration mainly focuses on publish/subscribe mechanisms that are used to 
 
 The figure above provides a detailed view of the interactions with the “neighbouring” components within the IoTCrawler framework. The interaction is divided into the following steps:
 
-1. In a first step, the Semantic Enrichment sends a subscription message to the Federated MDR to subscribe to all updates in IoTStreams, where an IoTStream is a class type defined in the IoTCrawler information model. This allows the Semantic Enrichment to receive notifications for newly added or updated data streams.
-2. In a next step a new data source is registered as an IoTStream at the Federated MDR. The registration contains details on how to access the related data source and additional metadata, e.g. a detailed description of the data sources properties and its characteristics.
+1. In the first step, the Semantic Enrichment sends a subscription message to the Federated MDR to subscribe to all updates in IoTStreams, where an IoTStream is a class type defined in the IoTCrawler information model. This allows the Semantic Enrichment to receive notifications for newly added or updated data streams.
+2. In the next step a new data source is registered as an IoTStream at the Federated MDR. The registration contains details on how to access the related data source and additional metadata, e.g. a detailed description of the data sources properties and its characteristics.
 3. For each newly registered or updated data source the Semantic Enrichment receives a notification. This allows to adopt the QoI calculation to changes in the metadata or to connect to a new data endpoint description to access data.
 4. The Semantic Enrichment component subscribes to the data source based on the information delivered in the notification received from the Federated MDR.
 5. In the last step the Semantic Enrichment calculates the QoI for each known data source and stores it to the metadata information within the Federated MDR. This allows other IoTCrawler components, as well as third-party users to access the additional information.
