@@ -6,3 +6,4 @@ This section defines all REST APIs supported by all components of IoTCrawler.
    :maxdepth: 1
 
    metadata-repository/broker-rest-api
+   authorization-enabler/capability-manager/capability-manager
