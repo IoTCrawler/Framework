@@ -121,3 +121,40 @@ How to open Pull request ?
   ![Create pull](open-pull.jpg)
 
 Excelente, you just open your first pull request in IoTCrawler project. The pull request will be reviewed and merged in the original IoTCrawler repository.
+
+## Delete Feature Branch
+
+When you are finished with your feature and your pull request is accepted and merged in the original IoTCrawler repository, it is time to clean your forked repository. You need to delete the feature branch from your local and remote forked repository.
+
+How to delete local and remote feature branch ?
+
+- Delete your local feature branch
+
+  ```
+  git branch -d <feature_branch_name>
+  ```
+
+- Push your changes to delete remote branch
+
+  ```
+  git push --delete origin <feature_branch_name>
+  ```
+
+## Sync Your Forked Repository with Original
+
+IoTCrawler is completely community based project. Therefore, the main codebase will keep getting commits from other developers. That means, you need to sync your forked repository with the original IoTCrawler repository. By doing so, you will avoid merge conflicts along the way.
+
+How to sync?
+
+- Fetch changes from upstream repository
+  ```
+  git fetch upstream
+  ```
+- Rebase the the local origin/master with upstream/master
+  ```
+  git rebase upstream/master
+  ```
+- Push the changes to the forked repository
+  ```
+  git push origin master
+  ```
