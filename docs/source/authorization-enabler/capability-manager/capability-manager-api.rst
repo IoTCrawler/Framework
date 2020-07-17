@@ -1,5 +1,5 @@
 Capability Manager REST API
-=================
+===========================
 This section defines all REST APIs supported by Capability Manager.
 
 .. contents:: Table of contents
@@ -9,7 +9,7 @@ This section defines all REST APIs supported by Capability Manager.
 
 
 Obtain Capability Token
-+++++++++++++
++++++++++++++++++++++++
 
 .. http:post:: /
 

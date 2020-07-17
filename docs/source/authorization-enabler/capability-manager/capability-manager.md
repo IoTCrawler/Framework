@@ -58,11 +58,11 @@ A brief description of each field is provided.
 
 ## API
 
-You can access to Capability Manager API in https://iotcrawler.readthedocs.io/en/latest/authorization-enabler/capability-manager/capability-manager.html
+The Capability Manager components supports multiple [REST APIs](capability-manager-api).
 
 ## How to deploy/test
 
-This component can be deployed following the README.md file of https://github.com/IoTCrawler/Capability-Manager.
+This component can be deployed following the [README.md](https://github.com/IoTCrawler/Capability-Manager) file.
 
 To test Capability Manager the next components of IoTCrawler must be configured and launched.
 
