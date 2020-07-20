@@ -7,3 +7,4 @@ This section defines all REST APIs supported by all components of IoTCrawler.
 
    metadata-repository/broker-rest-api
    authorization-enabler/capability-manager/capability-manager-api
+   authorization-enabler/pep-proxy/pep-proxy-api

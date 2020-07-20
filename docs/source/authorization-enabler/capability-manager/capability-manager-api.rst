@@ -28,7 +28,7 @@ Obtain Capability Token
 
       .. code-tab:: bash
  
-         $ curl --location --request POST 'https://localhost:3030/' \
+         $ curl --location --request POST 'https://{{CapMan-IP}}:{{CapMan-Port}}/' \
            --header 'Content-Type: application/json' \
            --data-raw '{"token": "753f103c-d8e5-4f4e-8720-13d5e2f55043", "de": "https://153.55.55.120:2354", "ac": "GET", "re": "/ngsi-ld/v1/entities/urn:ngsi-ld:Sensor:humidity.201" }'
 
@@ -56,3 +56,22 @@ Obtain Capability Token
    :statuscode 200: no error
    :statuscode 401: Unauthorized
    :statuscode 500: Can't generate capability token
+
+Test Capability Manager is running
+++++++++++++++++++++++++++++++++++
+
+.. http:get:: /
+
+   Test Capability Manager is running.
+
+   **Example request**:
+
+   .. tabs::
+
+      .. code-tab:: bash
+ 
+         $ curl --location --request GET 'https://{{CapMan-IP}}:{{CapMan-Port}}/'
+
+   **Example response**:
+
+   :statuscode 200: Component is running.

@@ -11,7 +11,7 @@ Capability Manager is developed in Python and makes use of the functionality dev
 Remembering DCapBAC technology, where access control process is decoupled in two phases:
 
 - 1st operation to receive authorisation. A token is issued
-- 2nd operation access to the resource using the token.
+- 2nd operation access to the resource previously validating the token.
 
 Capability Manager covers the first one.
 
@@ -58,7 +58,7 @@ A brief description of each field is provided.
 
 ## API
 
-The Capability Manager components supports multiple [REST APIs](capability-manager-api).
+The Capability Manager component supports multiple [REST APIs](capability-manager-api).
 
 ## How to deploy/test
 
@@ -70,7 +70,7 @@ To test Capability Manager the next components of IoTCrawler must be configured 
 - IdM-Keyrock.
 - XACML-PDP.
 
-Once Capability Manager is running you can test it. You can find postman collection with two request needed to obtain a capability token in https://github.com/IoTCrawler/iotcrawler-samples/tree/master/authorization-enabler. You only need to define:
+Once Capability Manager is running you can test it. You can find postman collection with two requests needed to obtain a capability token in https://github.com/IoTCrawler/iotcrawler-samples/tree/master/authorization-enabler. You only need to define:
 
 - `IdM-IP`:`IdM-Port` : Endpoint of IdM-Keyrock.
 - Review `name` and `password` of configured IdM user you want to obtain token.
