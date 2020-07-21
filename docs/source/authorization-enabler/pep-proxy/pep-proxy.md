@@ -30,7 +30,7 @@ When an access resource request is received by PEP-Proxy:
 
 ## API
 
-The PEP-Proxy component supports multiple [REST APIs](pep-proxy-api).
+The PEP-Proxy component supports multiple [REST APIs](pep-proxy-api.rst).
 
 ## How to deploy/test
 

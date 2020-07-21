@@ -44,7 +44,4 @@ Test PEP-Proxy is running
  
          $ curl --location --request GET 'https://{{PEP-Proxy-IP}}:{{PEP-Proxy-Port}}/'
 
-   **Example response**:
-
    :statuscode 200: Component is running.
-

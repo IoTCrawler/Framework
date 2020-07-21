@@ -48,7 +48,7 @@ With this information, XACML-PDP:
 
 ## API
 
-The XAML - PDP component supports the next [REST API](xacml-pdp-api).
+The XAML - PDP component supports the next [REST API](xacml-pdp-api.rst).
 
 ## How to deploy/test
 

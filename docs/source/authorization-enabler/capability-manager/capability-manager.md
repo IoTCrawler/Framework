@@ -58,7 +58,7 @@ A brief description of each field is provided.
 
 ## API
 
-The Capability Manager component supports the next [REST API](capability-manager-api).
+The Capability Manager component supports the next [REST API](capability-manager-api.rst).
 
 ## How to deploy/test
 
