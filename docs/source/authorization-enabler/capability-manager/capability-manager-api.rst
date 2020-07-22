@@ -72,6 +72,4 @@ Test Capability Manager is running
  
          $ curl --location --request GET 'https://{{CapMan-IP}}:{{CapMan-Port}}/'
 
-   **Example response**:
-
    :statuscode 200: Component is running.
