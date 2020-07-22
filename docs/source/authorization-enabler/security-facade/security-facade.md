@@ -1,38 +1,28 @@
-# Capability Manager
+# Security Facade
 
-## What's Capability Manager
+## What's Security Facade
 
-This component is the contact point for services and users that intend to access the resources stored in our IoTCrawler platform. It provides a REST API for receiving authorisation queries.
+This component has been designed as an endpoint for performing both authentication and authorisation operations in a transparent way for the requester. It has been developed in Java.
 
-Capability Manager is developed in Python and makes use of the functionality developed in Java (.jar file), and it's a DCapBAC component as we can show in the next image:
+In a traditional environment, we need to send three requests to have access to a resource:
+- 1st operation to authenticate through user credentials (IdM-KeyRock)
+- 2nd operation to receive authorisation. A token is issued (Capability Manager - DCapBAC technology component).
+- 3rd operation access to the resource previously validating the token (PEP-Proxy - DCapBAC technology component).
 
-![security-components](../security-components.png)
-
-Remembering DCapBAC technology, where access control process is decoupled in two phases:
-
-- 1st operation to receive authorisation. A token is issued
-- 2nd operation access to the resource previously validating the token.
-
-Capability Manager covers the first one.
+Security Facade offers an API to do possible the fusion of the two first requests in only one.
 
 ## IotCrawler integration/functionality
 
-As mentioned above, this component provides a REST API for receiving authorisation queries, which are tailored and forwarded to the XACML PDP for a verdict.
+As mentioned above, this component provides a REST API, when a request is received by Security Facade, it recovers from the JSON body:
 
-When an authorisation request is received by Capability Manager, it recovers from the JSON body:
-
-- an authentication token which proceeds from authentication phase (access to IdM-Keyrock).
+- user credentials of IdM-Keyrock (access to IdM-Keyrock).
 - an endpoint of the resource’s request (protocol+IP+PORT). In DCapBAC scenario, it corresponds with PEP-Proxy component.
 - the action/method of the resource’s request (“POST”, “GET”, “PATCH”...)
 - the path of the resource’s request
 
-With this information, Capability Manager:
+With this information, Security Facade interacts with Identity Manager and the Authorization Authorizer (XACML-PDP), and in case the requester has the appropriate permissions for the request, it sends the authorization token (Capacity Token) back to the requester.
 
-- Access to authentication component (IdM-Keyrock) to validate authentication token.
-- Access to XACML framework for validating authorisation requests (through PDP) and obtain if the subject can access to a resource and can perform the action over the resource (verdict). In IoTCrawler project, PDP also access to Blockchain to obtain the hash of the domain and compare with the hash of XAML policies and if not equal verdict is negative, this additional validation doesn't affects to Capability Manager.
-- If a positive verdict is received, finally, the Capability Manager issues an authorisation token called Capability Token which is a signed JSON document which contains all the required information for the authorisation, such as the resource to be accessed, the action to be performed, and also a time interval during the Capability Token is valid. This token will be required to access to the resource (through PEP-Proxy).
-
-![interaction-diagram-capability-manager](interaction-diagram-capability-manager.png)
+![interaction-diagram-security-facade](interaction-diagram-security-facade.png)
 
 ## Capability token’s considerations:
 
@@ -58,11 +48,11 @@ A brief description of each field is provided.
 
 ## API
 
-The Capability Manager component supports the next [REST API](capability-manager-api).
+The Security Facade component supports the next [REST API](security-facade-api).
 
 ## How to deploy/test
 
-This component can be deployed following the [README.md](https://github.com/IoTCrawler/Capability-Manager) file.
+This component can be deployed following the [README.md](https://github.com/IoTCrawler/Security-Facade) file or for a
 
 To test Capability Manager the next components of IoTCrawler must be configured and launched.
 
@@ -70,11 +60,10 @@ To test Capability Manager the next components of IoTCrawler must be configured 
 - IdM-Keyrock.
 - XACML-PDP.
 
-Once Capability Manager is running you can test it. You can find postman collection with two requests needed to obtain a capability token in https://github.com/IoTCrawler/iotcrawler-samples/tree/master/authorization-enabler. You only need to define:
+Once Security Facade is running you can test it. You can find postman collection with the request needed to obtain a capability token in https://github.com/IoTCrawler/iotcrawler-samples/tree/master/authorization-enabler. You only need to define:
 
-- `IdM-IP`:`IdM-Port` : Endpoint of IdM-Keyrock.
-- Review `name` and `password` of configured IdM user you want to obtain token.
-- `CapMan-IP`:`CapMan-Port` : Endpoint of Capability Manager. Default port: 3030
+- `Facade-IP`:`Facade-Port` : Endpoint of Security Facade. Default port: 8443
+- Review `name` and `password` of configured IdM user you want to obtain capability token.
 - `action` : Example: "GET",
 - `PEP-Proxy-IP`:`PEP-Proxy-Port` : Endpoint of PEP-Proxy. Default port: 1028
 - `resource`: path of the resource’s request. Example: "/scorpio/v1/info/"

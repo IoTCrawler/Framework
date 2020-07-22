@@ -17,9 +17,9 @@ Obtain Verdict
 
    :reqheader Content-Type: text/plain
 
-   :<json string subject: subject of the resource’s request. In DCapBAC scenario, it could correspond with a username (IDM). For example: "Peter"
-   :<json string resource: endpoint + path of the resource’s request (protocol+IP+PORT+path). For example: "https://153.55.55.120:2354/ngsi-ld/v1/entities/urn:ngsi-ld:Sensor:humidity.201".  In DCapBAC scenario, endpoint corresponds with the PEP-Proxy one.
-   :<json string action: method of the resource’s request ("POST", "GET", "PATCH"...)
+   :form subject: subject of the resource’s request. In DCapBAC scenario, it could correspond with a username (IDM). For example: "Peter"
+   :form resource: endpoint + path of the resource’s request (protocol+IP+PORT+path). For example: "https://153.55.55.120:2354/ngsi-ld/v1/entities/urn:ngsi-ld:Sensor:humidity.201".  In DCapBAC scenario, endpoint corresponds with the PEP-Proxy one.
+   :form action: method of the resource’s request ("POST", "GET", "PATCH"...)
 
    **Example request**:
 
