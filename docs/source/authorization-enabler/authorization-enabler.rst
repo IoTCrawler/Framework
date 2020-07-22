@@ -8,4 +8,5 @@ It is composed of multiple components to provide security in the IoTCrawler fram
    idm-keyrock/idm-keyrock
    xacml-pap-pdp/xacml-pap-pdp
    capability-manager/capability-manager
+   security-facade/security-facade
    pep-proxy/pep-proxy

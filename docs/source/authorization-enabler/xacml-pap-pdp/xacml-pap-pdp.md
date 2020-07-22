@@ -19,7 +19,7 @@ Remembering DCapBAC technology, where access control process is decoupled in two
 
 XACML-PDP is the component which validates the authorization request inside the first phase.
 
-## IotCrawler integration/functionality (REVIEW)
+## IotCrawler integration/functionality
 
 XACML-PAP, as mentioned above, it's a GUI for managing XACML policies (configuration), it's not interfering in the obtaining authorisation requests verdict. To define attributes and policies:
 
@@ -48,7 +48,7 @@ With this information, XACML-PDP:
 
 ## API
 
-The XAML - PDP component supports the next [REST API](xacml-pdp-api.rst).
+The XAML - PDP component supports the next [REST API](xacml-pdp-api).
 
 ## How to deploy/test
 
