@@ -14,9 +14,9 @@ We have selected this context broker for the instantiation of our MetaData Repos
 
 ## API - Scorpio
 
-Resources can be managed through the API (e.g. entities and subscriptions). Some of MetaData Repository requests are defined in the next [REST API](metadata-repository-api).
+Resources can be managed through the API (e.g. entities and subscriptions). The most relevant request of MetaData Repository are defined in the next [REST API](metadata-repository-api).
 
-For a detail explaination about the API, please look the ETSI spec.
+For a detail explaination about the API, please look the [ETSI spec](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.02_60/gs_cim004v010102p.pdf).
 
 ## How to deploy/test - Scorpio
 

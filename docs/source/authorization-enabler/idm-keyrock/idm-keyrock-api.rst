@@ -1,6 +1,6 @@
 IdM-Keyrock REST API
 ====================
-This section defines specific IdM-Keyrock requests required in IotCrawler environment. Further information can be found in the https://keyrock.docs.apiary.io/# 
+This section defines specific IdM-Keyrock requests required in IotCrawler environment. Further information can be found in the Keyrock Apiary (https://keyrock.docs.apiary.io).
 
 .. contents:: Table of contents
    :local:
