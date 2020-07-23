@@ -58,6 +58,29 @@ The :red:`data` field in the response will contain the NGSI-LD description for t
 
 **Please note:**  although this API method is named *replace* BrokenSensor, the original sensor is not removed from the IoTCrawler system.
 
+Deploy a new Virtual Sensor
+---------------------------
+
+:red:`This method is not fully implemented!`
+
+Instead of replacing a broken sensor this component also allows to deploy a Virtual Sensor for locations, where no real sensor is present. For this the following API method can be used. It must include the parameter **location** where the new Virtual Sensor shall be deployed as well as the ID of an *ObservableProperty* (parameter **propertyID**) to indicate what physical phenomena shall be 'measured'. The rest of the optional parameters have the same meaning as for the replaceBrokenSensor method. The Virtual Sensor will use linear regression to predict new *StreamObservations*.
+
+.. http:get:: /api/deployVirtualSensor/
+
+with payload
+
+::
+
+    {
+      "location" : [<latitude>, <longitude>, <altitude>],
+      "propertyID": <The ID of an ObservableProperty the new sensor shall measure>
+      "maxDistance": <The maximum distance in meter to search for contributing sensors. Integer, default 20000.>,
+      "onlySameObservations": <Consider only sensors that measure the same observation as the broken sensor. Boolean, default true.>,
+      "limitSourceSensors": <Limit the number of contributing sensors. Interger, default 8.>,
+      "updateInterval": <Number of seconds, in which the Virtual Sensor shall predict a new value>
+    }
+
+
 Stop a Virtual Sensor
 ---------------------
 This method can be used to stop an previously deployed Virtual Sensor, identified by its ID as returned by the deployment methode. If no Virtual Sensor with the given ID (parameter **sensorID**) exists this method returns an error. Otherwise the Virtual Sensor is stopped and the Virtual Sensor Creator component will delete the related entries in MDR, such as *Sensor*, *Platform* or *StreamObservations*. The un-deployment is triggered by a HTTP request to:
