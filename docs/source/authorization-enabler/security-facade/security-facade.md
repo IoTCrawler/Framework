@@ -1,6 +1,6 @@
 # Security Facade
 
-## What's Security Facade
+## What is a Security Facade
 
 This component has been designed as an endpoint for performing both authentication and authorisation operations in a transparent way for the requester. It has been developed in Java.
 

@@ -1,6 +1,6 @@
 MetaData REST API
 =================
-This section shows the basic entity requests used in the REST API of the MetaData Repository. For a detail explanation, please look the ETSI spec.
+This section shows the basic entity requests used in the REST API of the MetaData Repository. For a detail explanation, please look the ETSI spec (https://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.02_60/gs_cim004v010102p.pdf).
 
 .. contents:: Table of contents
    :local:

@@ -1,6 +1,6 @@
 # Capability Manager
 
-## What's Capability Manager
+## What is a Capability Manager
 
 This component is the contact point for services and users that intend to access the resources stored in our IoTCrawler platform. It provides a REST API for receiving authorisation queries.
 

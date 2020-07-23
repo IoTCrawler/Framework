@@ -1,6 +1,6 @@
 # PEP-Proxy
 
-## What's PEP-Proxy
+## What is a PEP-Proxy
 
 PEP_Proxy is the component responsible for receiving the queries aimed to access to a resource, they are accompanied by the corresponding `Capability Token` and forwards requests to the corresponding endpoint (for example MetaData Repository) and the responses back to the requester.
 

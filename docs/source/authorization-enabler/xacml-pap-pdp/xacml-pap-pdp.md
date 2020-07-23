@@ -1,6 +1,6 @@
 # XACML - PAP - PDP
 
-## What's XACML - PAP - PDP
+## What is a XACML - PAP - PDP
 
 This element corresponds to the implementation of the XACML framework. It comprises:
 - a Policy Administration Point (PAP) which is responsible for managing the authorisation policies
