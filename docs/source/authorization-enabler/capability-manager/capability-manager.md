@@ -66,7 +66,7 @@ This component can be deployed following the [README.md](https://github.com/IoTC
 
 To test Capability Manager the next components of IoTCrawler must be configured and launched.
 
-- Metadata Repository (MDR).
+- MetaData Repository (MDR).
 - IdM-Keyrock.
 - XACML-PDP.
 
