@@ -2,7 +2,7 @@
 
 ## What's PEP-Proxy
 
-PEP_Proxy is the component responsible for receiving the queries aimed to access to a resource, they are accompanied by the corresponding `Capability Token` and forwards requests to the corresponding endpoint (for example Metadata Repository) and the responses back to the requester.
+PEP_Proxy is the component responsible for receiving the queries aimed to access to a resource, they are accompanied by the corresponding `Capability Token` and forwards requests to the corresponding endpoint (for example MetaData Repository) and the responses back to the requester.
 
 PEP-Proxy is developed in Python and makes use of the functionality developed in Java (.jar file), and it's a DCapBAC component as we can show in the next image:
 
@@ -38,7 +38,7 @@ This component can be deployed following the [README.md](https://github.com/IoTC
 
 To test PEP-Proxy the next components of IoTCrawler must be configured and launched.
 
-- Metadata Repository (MDR).
+- MetaData Repository (MDR).
 - IdM-Keyrock.
 - XACML-PDP.
 - Capability Manager

@@ -5,7 +5,7 @@ This section defines all REST APIs supported by all components of IoTCrawler.
 .. toctree::
    :maxdepth: 1
 
-   metadata-repository/broker-rest-api
+   metadata-repository/metadata-repository-api
    authorization-enabler/idm-keyrock/idm-keyrock-api
    authorization-enabler/xacml-pap-pdp/xacml-pdp-api
    authorization-enabler/capability-manager/capability-manager-api
