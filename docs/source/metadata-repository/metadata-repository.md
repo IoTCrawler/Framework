@@ -1,10 +1,10 @@
 # MetaData Repository
 
-## What's MetaData Repository
+## What is a MetaData Repository
 
 The core component of the architecture of IoTCrawler is what we call MetaData Repository, which can be seen as a Context Broker with the features of distributing information following both query-response and publication-subscription patters among the other components of the IoTCrawler architecture. This Context Broker must be capable of representing semantic, linked data and property graphs. These features have been included in NGSI-LD, a new standard which has been conducted under the ETSI ISG CIM initiative. For this reason, we have selected this technology for the instantiation of our MetaData Repository.
 
-## Choosing MetaData Repository
+## Choosing a MetaData Repository
 
 There are available differents implementations of NGSI-LD context brokers like [Scorpio](https://github.com/ScorpioBroker/ScorpioBroker), [Orion-LD](https://github.com/Fiware/context.Orion-LD) and [Djane](https://github.com/sensinov/djane/). In IoTCrawler architecture, Scorpio is the choosen context broker.
 
