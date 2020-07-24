@@ -9,7 +9,27 @@ Within the IoTCrawler framework the ranking component can be used by the orchest
 
 Ranking score computation
 -------------------------
-The ranking score is computed by a weighted sum function. The weights and NGSI-LD property names for the values have to be supplied by the query.
+The ranking score is computed by a weighted sum function. Formally, for NGSI-LD properties :math:`p_1 \ldots p_n` and corresponding weights :math:`w_1 \ldots w_n` the ranking score :math:`r` is computed as following:
+
+.. math:: r = \sum_{i}^{} p_i w_i
+
+For the ranking component the weights and NGSI-LD property names for the values have to be supplied by the query. 
+
+Example for multi-criteria ranking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We want to rank NGSI-LD entities by the two (abbreviated) properties completeness and artificiality and weigh completeness 4 times more important than artificiality. Both NGSI-LD properties have values between 0 and 1 and we would like to get a ranking score also between 0 and 1. To achieve this the weights for both properties must add up to 1, therefore we fix the weight for completeness as 0.8 and the weight for artificiality as 0.2. If we now have two entities in to rank (with 'switched' values for completeness and artificiality), then the ranking scores are computed as follows:
+
++---------------+--------------+---------------+---------------+
+| entity        | completeness | artificiality | ranking score |
+|               | value        | value         | value         |
++===============+==============+===============+===============+
+| entity 1      |         0.88 |          0.92 |         0.888 |
++---------------+--------------+---------------+---------------+
+| entity 2      |         0.92 |          0.88 |         0.912 |
++---------------+--------------+---------------+---------------+
+
+Due to the higher weight of the completeness property, the ranking score favors entity 2 with the higher completeness value.
 
 Setup
 -----
