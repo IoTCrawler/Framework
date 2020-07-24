@@ -2,3 +2,4 @@ build/
 .vscode
 .git
 venv/
+docs/source/_build/
