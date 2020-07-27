@@ -11,6 +11,7 @@ Key Concepts
    orchestrator/orchestrator
    ranking/ranking
    indexing/indexing
+   search-enabler/search-enabler
    authorization-enabler/authorization-enabler
    semantic-enrichment/semantic-enrichment
    monitoring/monitoring

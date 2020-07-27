@@ -12,8 +12,7 @@ The Orchestrator supports NGSI-LD REST interface: all requests are redirected to
 This subscription mechanism allows IoT app developer to debug IoT applications using the local instance of NGSI-LD Broker (Scorpio or Jane) and then later just to switch to orchestrator’s endpoint.
 
 IoTCrawler Client
-============
-
+########
 
 The orchestrator project contains the core library (Java), which is targeted to be used in IoTCrawler applications. The idea is that standalone IoTCrawler applications would use this library and act as client to an online IoTCrawler deployment. 
 
@@ -24,7 +23,7 @@ The online orchestrator is expected to receive notifications from MDR broker and
 This mechanism allows IoTCrawler apps to run in private networks connected to the Internet (e.g. smart home deployments, mobile apps, etc).
 
 Code structure
-============
+########
 
 The orchestrator project consists of a number of modules depending hierarchically (bottom modules depend on top ones):
 
@@ -34,7 +33,7 @@ The orchestrator project consists of a number of modules depending hierarchicall
 #. `Orchestrator <https://github.com/IoTCrawler/Orchestrator/tree/master/com.agtinternational.iotcrawler.orchestrator>`_ - A standalone standalone component running in the IoTCrawler platform.
 
 Build
-============
+########
 The orchestrator and it's supplementary libraries be built using the following command:
 
 `sh make.sh install`
@@ -42,7 +41,7 @@ The orchestrator and it's supplementary libraries be built using the following c
 During the build process all the modules are will be installed installed into a local maven repository.
 
 Deployment
-============
+########
 The orchestrator is deployable as a docker container together with a number of assisting services (such as Redis and RabbitMQ).
 
 A docker image for deployment can be build by the following command:
@@ -53,12 +52,12 @@ A docker image for deployment can be build by the following command:
 
 A `docker-compose file <https://github.com/IoTCrawler/Orchestrator/blob/master/com.agtinternational.iotcrawler.orchestrator/docker-compose.yml>`_ is targeted for help with local running and debugging process. 
 
-A `helm chart <https://github.com/IoTCrawler/Orchestrator/tree/master/chart>`_ describes the orchestrator and its components to be deployed on Kubernetes cluster.
+A `helm chart <https://github.com/IoTCrawler/Orchestrator/tree/master/chart>`_ configures the orchestrator and its components to be deployed on Kubernetes cluster.
 
-A `gitlab CI configuration <https://github.com/IoTCrawler/Orchestrator/blob/master/.gitlab-ci.yml>`_ describes the building process deployment flow.
+A `gitlab CI configuration <https://github.com/IoTCrawler/Orchestrator/blob/master/.gitlab-ci.yml>`_ configures the building process deployment flow.
 
 Configuration
-============
+########
 
 The orchestrator component is configured via a number of environment variables, which can be found in a docker-compose file:
 
