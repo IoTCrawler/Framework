@@ -12,3 +12,4 @@ This section defines all REST APIs supported by all components of IoTCrawler.
    authorization-enabler/security-facade/security-facade-api
    authorization-enabler/pep-proxy/pep-proxy-api
    ranking/ranking-api
+   indexing/indexing-api
