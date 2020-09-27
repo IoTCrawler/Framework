@@ -1,4 +1,4 @@
-Introduction
+Pattern Extractor
 ============
 
 As part of the Semantic Enrichment component, the Pattern Extraction
