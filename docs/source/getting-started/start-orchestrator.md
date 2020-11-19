@@ -1,6 +1,6 @@
 # Start Orchestrator
 
-Orchestrator works on top of [Metadata Repository](:doc:`start-metadata-repository`) (handles subscription requests) or the [Ranking Component](:doc:`start-ranking-component`) (handles all types of GET requests).
+Orchestrator works on top of [Metadata Repository](start-metadata-repository.html) (handles subscription requests) or the [Ranking Component](start-ranking-component.html)(handles all types of GET requests).
 Make sure that at least one of these two component is already running.
 
 Configuration of orchestrator and supplementary services is described in the [docker-compose](https://github.com/IoTCrawler/Orchestrator/blob/master/com.agtinternational.iotcrawler.orchestrator/docker-compose.yml) file. Clone the [repository](https://github.com/IoTCrawler/Orchestrator) to have the file locally:
@@ -11,7 +11,7 @@ cd orchestrator
 cd com.agtinternational.iotcrawler.orchestrator
 ```
 
-Make sure that you've checked/adjusted environment variables according to the [documentation](https://github.com/IoTCrawler/Orchestrator/). To run orchestrator and other services execute the following command:
+Make sure that you've checked/adjusted environment variables according to the [Documentation](../orchestrator/orchestrator.html). To run orchestrator and other services execute the following command:
 
 ```
 docker-compose up -f docker-compose.yml
@@ -36,7 +36,7 @@ INFO [com.agtinternational.iotcrawler.orchestrator.Orchestrator] - <Starting bui
 DEBUG [com.agtinternational.iotcrawler.core.clients.RabbitClient] - <Connection to Rabbit rabbit established>
 ```
 
-You can check the running containers with following command.
+You can check the running containers with following command:
 
 ```
 docker ps -a

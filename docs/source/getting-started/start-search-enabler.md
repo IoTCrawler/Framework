@@ -1,7 +1,7 @@
 # Start Search-Enabler
 
 Search enabler works on top of NGSI-LD compatible component: 
-[Orchestrator](:doc:`start-orchestrator`), [Ranking Component](:doc:`start-ranking-component`) or [Metadata Repository](:doc:`start-metadata-repository`)
+[Orchestrator](start-orchestrator.html), [Ranking Component](start-ranking-component.html) or [Metadata Repository](start-metadata-repository.html).
 Make sure that at least one of these two component is already running.
 
 Configuration of search-enabler is stored in [docker-compose](https://github.com/IoTCrawler/Search-Enabler/blob/master/docker-compose.yml) file. Clone the [repository](https://github.com/IoTCrawler/Search-Enabler) to have the file locally:
@@ -10,7 +10,7 @@ Configuration of search-enabler is stored in [docker-compose](https://github.com
 git clone https://github.com/IoTCrawler/Search-Enabler
 cd search-enabler
 ```
-Please make sure that you've checked/adjusted environment variables according to [documentation](https://github.com/IoTCrawler/Search-Enabler). Execute the following command to run search-enabler:
+Please make sure that you've checked/adjusted environment variables according to [Documentation](../search-enabler/search-enabler.html). Execute the following command to run search-enabler:
 
 ```
 docker-compose up -f docker-compose.yml
@@ -46,7 +46,7 @@ INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat s
 INFO 1 --- [           main] c.a.i.graphqlEnabler.HttpApplication     : Started HttpApplication in 9.806 seconds (JVM running for 11.245)
 ```
 
-You can check the running containers with following command.
+You can check the running containers with following command:
 
 ```
 docker ps -a
